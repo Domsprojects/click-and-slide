@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,36 +8,38 @@
 </head>
 
 <style>
-    html{
+    html {
         background-color: black;
         font-family: 'Courier New', Courier, monospace;
     }
 
-    #container{
+    #container {
         display: flex;
         flex-direction: column;
         align-items: center;
         width: 60vw;
     }
 
-    #buttons{
-        margin-bottom: 20px;  
+    #buttons {
+        margin-bottom: 20px;
     }
 
     #buttons button {
         background-color: white;
-        color:  #9C0F0C;
+        color: #9C0F0C;
         font-weight: bold;
         height: 50px;
         width: 100px;
         font-size: large;
     }
 
-    #four, #five, #six{
+    #four,
+    #five,
+    #six {
         margin-left: 20px;
     }
 
-    #square{
+    #square {
         border: 1px solid #9C0F0C;
         width: 600px;
         height: 600px;
@@ -47,7 +50,7 @@
         font-size: 0;
     }
 
-    #clock{
+    #clock {
         width: 20vw;
         height: 10vh;
         color: white;
@@ -62,8 +65,8 @@
         display: flex;
         flex-direction: row;
     }
-    
-    #ranking{
+
+    #ranking {
         width: 40vw;
         color: white;
         display: flex;
@@ -73,7 +76,7 @@
         padding-top: 20px;
     }
 
-    #ranking table{
+    #ranking table {
         border: 1px solid #5C0907;
         border-spacing: 0;
         width: 100%;
@@ -84,7 +87,7 @@
         background-color: white;
     }
 
-    .rows td{
+    .rows td {
         border: 1px solid #5C0907;
         font-size: 1.5em;
         background-color: white;
@@ -98,7 +101,7 @@
         border: 1px solid #5C0907;
     }
 
-    #table_label td{
+    #table_label td {
         background-color: #9C0F0C;
         border: 1px solid #5C0907;
         font-size: 1.5em;
@@ -106,7 +109,7 @@
         padding: 10px;
     }
 
-    #ranking_label{
+    #ranking_label {
         color: white;
         font-size: 2em;
         margin-top: 20px;
@@ -121,7 +124,7 @@
         margin-bottom: 20px;
         display: flex;
         flex-direction: row;
-        overflow: hidden;    
+        overflow: hidden;
     }
 
     .arrows {
@@ -134,7 +137,7 @@
         cursor: pointer;
     }
 
-    .slider_image img{
+    .slider_image img {
         width: 200px;
         height: 200px;
         display: flex;
@@ -148,7 +151,7 @@
         justify-content: center;
     }
 
-    #slider_container{
+    #slider_container {
         display: flex;
         flex-direction: row;
         width: 300px;
@@ -160,9 +163,9 @@
         margin: 0;
     }
 
-    .game_description{
+    .game_description {
         margin-top: 50px;
-        color:  #9C0F0C;
+        color: #9C0F0C;
         font-size: 2em;
         font-weight: bold;
         display: flex;
@@ -171,11 +174,11 @@
         margin-bottom: 50px;
     }
 
-    #choose_img{
+    #choose_img {
         height: 40px;
     }
-
 </style>
+
 <body>
 
     <script>
@@ -183,51 +186,58 @@
 
         var clicks = 0
 
-        function change_background(img){
-            document.getElementById("choose_img").innerText=""
+        function change_background(img) {
+            document.getElementById("choose_img").innerText = ""
             background_scr = img.src;
-            background_scr = "url('"+background_scr+"')"
+            background_scr = "url('" + background_scr + "')"
             console.log(background_scr)
             var div = document.createElement("DIV")
-            div.style.color="white"
-           if(clicks>0){
-                div.innerText="Zmieniono obraz"
-            }else{
-                div.innerText="Wybrano obraz"
+            div.style.color = "white"
+            if (clicks > 0) {
+                div.innerText = "Zmieniono obraz"
+            } else {
+                div.innerText = "Wybrano obraz"
             }
             document.getElementById("choose_img").appendChild(div)
 
             clicks++
         }
 
-        
+
     </script>
 
     <div id="main">
         <div id="container">
-            <div class="game_description" style="padding: 20px; text-align: center; margin-bottom: 10px;">Aby rozpocząć grę wybierz obraz a następnie tryb gry.</div>
+            <div class="game_description" style="padding: 20px; text-align: center; margin-bottom: 10px;">Aby rozpocząć
+                grę wybierz obraz a następnie tryb gry.</div>
             <div class="game_description" style="margin-top: 10px;">Nie zapomnij o podaniu nicku!</div>
 
             <div id="slider_container">
                 <a id="arrow_left" class="arrows">&#10094;</a>
                 <div id="slider">
-        
+
                     <div class="slider_image">
-                        <img onclick="change_background(this)" src="https://i.imgflip.com/1472cz.jpg" alt="img1" style="cursor: pointer;">
-                    </div>
-        
-                    <div class="slider_image">
-                        <img onclick="change_background(this)" src="https://ae01.alicdn.com/kf/HTB1GzHpacnrK1RkHFrdq6xCoFXaz/Fashion-Dog-Glasses-Eyewear-Sunglasses-For-Cats-Small-Large-Dogs-Funny-Photos-Props-New-Year-Party.jpg" alt="img2" style="cursor: pointer;">
-                    </div>
-        
-                    <div class="slider_image">
-                        <img onclick="change_background(this)" src="https://pbs.twimg.com/profile_images/437512776362115072/7ORMrPZN.jpeg" alt="img3" style="cursor: pointer;">
+                        <img onclick="change_background(this)" src="https://i.imgflip.com/1472cz.jpg" alt="img1"
+                            style="cursor: pointer;">
                     </div>
 
                     <div class="slider_image">
-                        <img onclick="change_background(this)" src="https://i.imgflip.com/1472cz.jpg" alt="img1" style="cursor: pointer;">
+                        <img onclick="change_background(this)"
+                            src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg" alt="img2"
+                            style="cursor: pointer;">
                     </div>
-        
+
+                    <div class="slider_image">
+                        <img onclick="change_background(this)"
+                            src="https://pbs.twimg.com/profile_images/437512776362115072/7ORMrPZN.jpeg" alt="img3"
+                            style="cursor: pointer;">
+                    </div>
+
+                    <div class="slider_image">
+                        <img onclick="change_background(this)" src="https://i.imgflip.com/1472cz.jpg" alt="img1"
+                            style="cursor: pointer;">
+                    </div>
+
                 </div>
                 <a id="arrow_right" class="arrows">&#10095;</a>
             </div>
@@ -252,19 +262,22 @@
             <div id="square"></div>
         </div>
         <div id="ranking">
-            <div class="game_description" style="font-size: 1.5em; color: white; text-align: center; margin-bottom: 10px;">Podaj swój nick, aby móc być dodanym do tabeli w razie pobicia rekordu:</div>
-            <input type="text" value="Nie podano nicku" id="input_nick" style="background-color: white; color: #5C0907; border: 2px solid #5C0907; width: 400px; font-family: 'Courier New', Courier, monospace; margin-bottom: 20px;">
+            <div class="game_description"
+                style="font-size: 1.5em; color: white; text-align: center; margin-bottom: 10px;">Podaj swój nick, aby
+                móc być dodanym do tabeli w razie pobicia rekordu:</div>
+            <input type="text" value="Nie podano nicku" id="input_nick"
+                style="background-color: white; color: #5C0907; border: 2px solid #5C0907; width: 400px; font-family: 'Courier New', Courier, monospace; margin-bottom: 20px;">
 
             <div id="ranking_label"></div>
 
             <div id="ranking_table_div"></div>
 
-          
+
         </div>
 
     </div>
 
-    
+
 
     <script>
 
@@ -293,40 +306,40 @@
 
         slider_slide.scrollLeft = 200;
 
-        button_right.addEventListener("click", function(){
+        button_right.addEventListener("click", function () {
             var scroll_position = 0
-            var move_to_next_img = setInterval(function(){
-                    slider_slide.scrollLeft += 10;
-                    scroll_position += 10;
-                    if(scroll_position >= 200){
-                        window.clearInterval(move_to_next_img);
-                    }
+            var move_to_next_img = setInterval(function () {
+                slider_slide.scrollLeft += 10;
+                scroll_position += 10;
+                if (scroll_position >= 200) {
+                    window.clearInterval(move_to_next_img);
+                }
             }, 25);
 
-            if(slider_slide.scrollLeft==600){
+            if (slider_slide.scrollLeft == 600) {
                 slider_slide.scrollLeft = 0
             }
         })
 
 
-        button_left.addEventListener("click", function(){
+        button_left.addEventListener("click", function () {
             var scroll_position = 0
-            var move_to_next_img = setInterval(function(){
-                    slider_slide.scrollLeft -= 10;
-                    scroll_position += 10;
-                    if(scroll_position >= 200){
-                        window.clearInterval(move_to_next_img);
-                    }
+            var move_to_next_img = setInterval(function () {
+                slider_slide.scrollLeft -= 10;
+                scroll_position += 10;
+                if (scroll_position >= 200) {
+                    window.clearInterval(move_to_next_img);
+                }
             }, 25);
-            
-            if(slider_slide.scrollLeft==0){
-                slider_slide.scrollLeft =800
+
+            if (slider_slide.scrollLeft == 0) {
+                slider_slide.scrollLeft = 800
             }
         })
 
-        
-        
-        
+
+
+
 
         // ZEGAR
         var timer_stop = ""
@@ -342,200 +355,200 @@
         var div_h = document.getElementById("div_hours")
 
         var colon1 = document.getElementById("colon1")
-            var img_colon1 = document.createElement("IMG")
-            img_colon1.src =  "colon.gif"
-            colon1.appendChild(img_colon1)
-        colon1.style.visibility="hidden"
+        var img_colon1 = document.createElement("IMG")
+        img_colon1.src = "colon.gif"
+        colon1.appendChild(img_colon1)
+        colon1.style.visibility = "hidden"
 
-            var colon2 = document.getElementById("colon2")
-            var img_colon2 = document.createElement("IMG")
-            img_colon2.src =  "colon.gif"
-            colon2.appendChild(img_colon2)
-            colon2.style.visibility="hidden"
-
-
-            var dot = document.getElementById("dot")
-            var img_dot = document.createElement("IMG")
-            img_dot.src =  "dot.gif"
-            dot.appendChild(img_dot)
-            dot.style.visibility="hidden"
+        var colon2 = document.getElementById("colon2")
+        var img_colon2 = document.createElement("IMG")
+        img_colon2.src = "colon.gif"
+        colon2.appendChild(img_colon2)
+        colon2.style.visibility = "hidden"
 
 
-        function change_time_to_img(time_unit, parent_time_unit){
+        var dot = document.getElementById("dot")
+        var img_dot = document.createElement("IMG")
+        img_dot.src = "dot.gif"
+        dot.appendChild(img_dot)
+        dot.style.visibility = "hidden"
 
 
-                parent_time_unit.innerHTML = ""
-                for(var a=0; a< String(time_unit).length; a++){
-                    if(String(time_unit)[a]==0){
-                        var img = document.createElement("IMG")
-                        img.src =  "c0.gif"
-                        parent_time_unit.appendChild(img)
-                    }
+        function change_time_to_img(time_unit, parent_time_unit) {
 
-                    if(String(time_unit)[a]==1){
-                        var img = document.createElement("IMG")
-                        img.src =  "c1.gif"
-                        parent_time_unit.appendChild(img)
-                    }
 
-                    if(String(time_unit)[a]==2){
-                        var img = document.createElement("IMG")
-                        img.src =  "c2.gif"
-                        parent_time_unit.appendChild(img)
-                    }
-
-                    if(String(time_unit)[a]==3){
-                        var img = document.createElement("IMG")
-                        img.src =  "c3.gif"
-                        parent_time_unit.appendChild(img)
-                    }
-
-                    if(String(time_unit)[a]==4){
-                        var img = document.createElement("IMG")
-                        img.src =  "c4.gif"
-                        parent_time_unit.appendChild(img)
-                    }
-
-                    if(String(time_unit)[a]==5){
-                        var img = document.createElement("IMG")
-                        img.src =  "c5.gif"
-                        parent_time_unit.appendChild(img)
-                    }
-
-                    if(String(time_unit)[a]==6){
-                        var img = document.createElement("IMG")
-                        img.src =  "c6.gif"
-                        parent_time_unit.appendChild(img)
-                    }
-
-                    if(String(time_unit)[a]==7){
-                        var img = document.createElement("IMG")
-                        img.src =  "c7.gif"
-                        parent_time_unit.appendChild(img)
-                    }
-
-                    if(String(time_unit)[a]==8){
-                        var img = document.createElement("IMG")
-                        img.src =  "c8.gif"
-                        parent_time_unit.appendChild(img)
-                    }
-
-                    if(String(time_unit)[a]==9){
-                        var img = document.createElement("IMG")
-                        img.src =  "c9.gif"
-                        parent_time_unit.appendChild(img)
-                    }
+            parent_time_unit.innerHTML = ""
+            for (var a = 0; a < String(time_unit).length; a++) {
+                if (String(time_unit)[a] == 0) {
+                    var img = document.createElement("IMG")
+                    img.src = "c0.gif"
+                    parent_time_unit.appendChild(img)
                 }
+
+                if (String(time_unit)[a] == 1) {
+                    var img = document.createElement("IMG")
+                    img.src = "c1.gif"
+                    parent_time_unit.appendChild(img)
+                }
+
+                if (String(time_unit)[a] == 2) {
+                    var img = document.createElement("IMG")
+                    img.src = "c2.gif"
+                    parent_time_unit.appendChild(img)
+                }
+
+                if (String(time_unit)[a] == 3) {
+                    var img = document.createElement("IMG")
+                    img.src = "c3.gif"
+                    parent_time_unit.appendChild(img)
+                }
+
+                if (String(time_unit)[a] == 4) {
+                    var img = document.createElement("IMG")
+                    img.src = "c4.gif"
+                    parent_time_unit.appendChild(img)
+                }
+
+                if (String(time_unit)[a] == 5) {
+                    var img = document.createElement("IMG")
+                    img.src = "c5.gif"
+                    parent_time_unit.appendChild(img)
+                }
+
+                if (String(time_unit)[a] == 6) {
+                    var img = document.createElement("IMG")
+                    img.src = "c6.gif"
+                    parent_time_unit.appendChild(img)
+                }
+
+                if (String(time_unit)[a] == 7) {
+                    var img = document.createElement("IMG")
+                    img.src = "c7.gif"
+                    parent_time_unit.appendChild(img)
+                }
+
+                if (String(time_unit)[a] == 8) {
+                    var img = document.createElement("IMG")
+                    img.src = "c8.gif"
+                    parent_time_unit.appendChild(img)
+                }
+
+                if (String(time_unit)[a] == 9) {
+                    var img = document.createElement("IMG")
+                    img.src = "c9.gif"
+                    parent_time_unit.appendChild(img)
+                }
+            }
         }
 
         var display_clock = ""
-        function timer(){
-           if(stop_timer==false){
-            colon1.style.visibility="visible"
-            colon2.style.visibility="visible"
-            dot.style.visibility="visible"
+        function timer() {
+            if (stop_timer == false) {
+                colon1.style.visibility = "visible"
+                colon2.style.visibility = "visible"
+                dot.style.visibility = "visible"
 
-            // Wyczyszczenie zegara - odnowa
-            var secunds = 0 
-                
+                // Wyczyszczenie zegara - odnowa
+                var secunds = 0
+
                 let current_time = new Date()
                 var display_time = current_time - start_time
-    
+
                 var milisecunds = display_time % 1000
-                var secunds =  Math.floor((display_time /  1000)) % 60
+                var secunds = Math.floor((display_time / 1000)) % 60
                 var minutes = Math.floor((display_time / 60000)) % 60
                 var hours = Math.floor((display_time / 3600000)) % 60
-    
+
                 var numbers = []
 
-                if(milisecunds<100){
-                    milisecunds="0"+milisecunds
+                if (milisecunds < 100) {
+                    milisecunds = "0" + milisecunds
                 }
-                if(milisecunds<10){
-                    milisecunds="0"+milisecunds
+                if (milisecunds < 10) {
+                    milisecunds = "0" + milisecunds
                 }
-                if(secunds<10){
-                    secunds="0"+secunds
+                if (secunds < 10) {
+                    secunds = "0" + secunds
                 }
-                if(minutes<10){
-                    minutes="0"+minutes
+                if (minutes < 10) {
+                    minutes = "0" + minutes
                 }
-                if(hours<10){
-                     hours="0"+hours
+                if (hours < 10) {
+                    hours = "0" + hours
                 }
 
-                display_clock = hours+":"+minutes+":"+secunds+"."+milisecunds
+                display_clock = hours + ":" + minutes + ":" + secunds + "." + milisecunds
 
                 change_time_to_img(milisecunds, div_ms)
                 change_time_to_img(secunds, div_s)
                 change_time_to_img(minutes, div_m)
                 change_time_to_img(hours, div_h)
-                
 
-           }else if(stop_timer==true){
+
+            } else if (stop_timer == true) {
                 var display_time = start_time - start_time
                 var milisecunds = display_time % 1000
-                var secunds =  Math.floor((display_time /  1000)) % 60
+                var secunds = Math.floor((display_time / 1000)) % 60
                 var minutes = Math.floor((display_time / 60000)) % 60
                 var hours = Math.floor((display_time / 3600000)) % 60
 
-                if(secunds<10){
-                    secunds="0"+secunds
+                if (secunds < 10) {
+                    secunds = "0" + secunds
                 }
-                if(minutes<10){
-                    minutes="0"+minutes
+                if (minutes < 10) {
+                    minutes = "0" + minutes
                 }
-                if(hours<10){
-                     hours="0"+hours
+                if (hours < 10) {
+                    hours = "0" + hours
                 }
 
                 change_time_to_img(milisecunds, div_ms)
                 change_time_to_img(secunds, div_s)
                 change_time_to_img(minutes, div_m)
                 change_time_to_img(hours, div_h)
-           }else{
-               clearInterval(timer)
-           }
+            } else {
+                clearInterval(timer)
+            }
         }
 
         // UKŁADANKA
-        function search_tiles(item){
-            if(item.id!="empty"){
-                    // Szukanie pozycji elementu klikniętego w tablicy
-                    for(var a=0; a<auxiliary_variables.game_board_array.length;a++){
-                        for(var b=0; b<auxiliary_variables.game_board_array[a].length;b++){
-                            if(item==auxiliary_variables.game_board_array[a][b]){
-                                auxiliary_variables.tile_pos_y = a
-                                auxiliary_variables.tile_pos_x = b
-                            }
+        function search_tiles(item) {
+            if (item.id != "empty") {
+                // Szukanie pozycji elementu klikniętego w tablicy
+                for (var a = 0; a < auxiliary_variables.game_board_array.length; a++) {
+                    for (var b = 0; b < auxiliary_variables.game_board_array[a].length; b++) {
+                        if (item == auxiliary_variables.game_board_array[a][b]) {
+                            auxiliary_variables.tile_pos_y = a
+                            auxiliary_variables.tile_pos_x = b
                         }
                     }
+                }
             }
 
             // Szukanie pozycji elementu pustego w tablicy
-            for(var a=0; a<auxiliary_variables.game_board_array.length;a++){
-                        for(var b=0; b<auxiliary_variables.game_board_array[a].length;b++){
-                            if(auxiliary_variables.game_board_array[a][b].id=="empty"){
-                                auxiliary_variables.empty_tile_pos_y = a
-                                auxiliary_variables.empty_tile_pos_x = b
-                            }
-                        }
+            for (var a = 0; a < auxiliary_variables.game_board_array.length; a++) {
+                for (var b = 0; b < auxiliary_variables.game_board_array[a].length; b++) {
+                    if (auxiliary_variables.game_board_array[a][b].id == "empty") {
+                        auxiliary_variables.empty_tile_pos_y = a
+                        auxiliary_variables.empty_tile_pos_x = b
                     }
+                }
+            }
         }
 
-        function random_move_tiles(){
+        function random_move_tiles() {
             var game_tiles = document.querySelectorAll(".tile")
             var random_game_tile = game_tiles[Math.floor(Math.random() * game_tiles.length)];
 
             search_tiles(random_game_tile)
 
             // Warunki pozwalające na zmianę miejsca kafelka
-            if((auxiliary_variables.empty_tile_pos_x==auxiliary_variables.tile_pos_x+1 && auxiliary_variables.empty_tile_pos_y==auxiliary_variables.tile_pos_y) || (auxiliary_variables.empty_tile_pos_x==auxiliary_variables.tile_pos_x-1 && auxiliary_variables.empty_tile_pos_y==auxiliary_variables.tile_pos_y) || (auxiliary_variables.empty_tile_pos_x==auxiliary_variables.tile_pos_x && auxiliary_variables.empty_tile_pos_y==auxiliary_variables.tile_pos_y+1) || (auxiliary_variables.empty_tile_pos_x==auxiliary_variables.tile_pos_x && auxiliary_variables.empty_tile_pos_y==auxiliary_variables.tile_pos_y-1)){
+            if ((auxiliary_variables.empty_tile_pos_x == auxiliary_variables.tile_pos_x + 1 && auxiliary_variables.empty_tile_pos_y == auxiliary_variables.tile_pos_y) || (auxiliary_variables.empty_tile_pos_x == auxiliary_variables.tile_pos_x - 1 && auxiliary_variables.empty_tile_pos_y == auxiliary_variables.tile_pos_y) || (auxiliary_variables.empty_tile_pos_x == auxiliary_variables.tile_pos_x && auxiliary_variables.empty_tile_pos_y == auxiliary_variables.tile_pos_y + 1) || (auxiliary_variables.empty_tile_pos_x == auxiliary_variables.tile_pos_x && auxiliary_variables.empty_tile_pos_y == auxiliary_variables.tile_pos_y - 1)) {
                 move_tiles(random_game_tile)
-            }else{
+            } else {
                 random_move_tiles()
             }
-            
+
         }
 
         function check(element) {
@@ -544,159 +557,130 @@
             }
         }
 
-        function get_cookies(){
-            var all_cookies = document.cookie.split(";")
-                        var cookies_choosen_tryb_array = []
-                        var cookie_position_array = []
+        function get_cookies() {
+            var all_cookies = document.cookie.split("; ");
+            var cookies_choosen_tryb_array = [];
+            var cookie_position_array = [];
 
-                        for(var a=0; a<all_cookies.length;a++){
+            for (var i = 0; i < all_cookies.length; i++) {
+                var cookie = all_cookies[i].split("=");
+                var cookie_name = cookie[0];
+                var cookie_value = cookie[1];
 
-                            if(cookie_tryb==3){
-                                if(document.cookie.split("; ")[a].split("=")[0].slice(6,7)==3){
-                                    cookies_choosen_tryb_array.push(document.cookie.split(";")[a])
-                                }
-                            }
+                // Sprawdzenie, czy nazwa ciasteczka zawiera poprawny tryb gry
+                if (cookie_name.includes("tryb" + cookie_tryb)) {
+                    cookies_choosen_tryb_array.push(all_cookies[i]);
+                }
+            }
 
-                            else  if(cookie_tryb==4){
-                                if(document.cookie.split("; ")[a].split("=")[0].slice(6,7)==4){
-                                    cookies_choosen_tryb_array.push(document.cookie.split(";")[a])
-                                }
-                            }
+            console.log("Cookies for chosen mode:", cookies_choosen_tryb_array);
 
-                            if(cookie_tryb==5){
-                                if(document.cookie.split("; ")[a].split("=")[0].slice(6,7)==5){
-                                    cookies_choosen_tryb_array.push(document.cookie.split(";")[a])
+            for (var i = 0; i < cookies_choosen_tryb_array.length; i++) {
+                var cookie_parts = cookies_choosen_tryb_array[i].split("=")[1].split("|");
+                var recorded_time = parseFloat(cookie_parts[3]); // Czas zapisany w ciasteczku
+                var position = parseInt(cookie_parts[5]); // Pozycja w rankingu
 
-                                }
-                            }
+                if (recorded_time > display_clock) {
+                    cookie_position_array.push(position);
+                    console.log("Added position:", position);
+                }
+            }
 
-                            if(cookie_tryb==6){
-                                if(document.cookie.split("; ")[a].split("=")[0].slice(6,7)==6){
-                                    cookies_choosen_tryb_array.push(document.cookie.split(";")[a])
-                                }
-                            }
+            if (cookie_position_array.length > 0 && can_add_cookie) {
+                cookie_position_array.sort((a, b) => a - b);
+                new_cookie_position = cookie_position_array[0];
 
-                        }
-                     
-                        console.log(cookies_choosen_tryb_array)
-                        for(var a=0; a<cookies_choosen_tryb_array.length;a++){
-                            if(cookies_choosen_tryb_array[a].split("=")[1].split("|")[3]>display_clock){
-                                cookie_position_array.push(parseInt(cookies_choosen_tryb_array[a].split("=")[1].split("|")[5]))
-                                console.log("DODANE POZYCJE")
-                            }
-                        }
- 
+                var new_cookie_nick = document.getElementById("input_nick").value;
+                if (new_cookie_nick.trim() !== "") {
+                    set_cookie(cookie_tryb, new_cookie_position, new_cookie_nick, display_clock);
+                } else {
+                    console.warn("Nickname is empty, not saving the cookie.");
+                }
+            }
 
-                        if(cookie_position_array.length>0 && can_add_cookie == true){
-                            cookie_position_array.sort(function(a, b) {
-                                return a - b;
-                            })
+            // Aktualizacja tabeli wyników
+            var cookie_table = [];
 
+            for (var i = 0; i < all_cookies.length; i++) {
+                var cookie = all_cookies[i].split("=");
+                var cookie_name = cookie[0];
 
-                            new_cookie_position = cookie_position_array[0]
-                            var new_cookie_nick = document.getElementById("input_nick").value
-                            
-                            var new_cookie = set_cookie(cookie_tryb, new_cookie_position, new_cookie_nick, display_clock)
-                        }
+                if (cookie_name.includes("tryb" + cookie_tryb)) {
+                    cookie_table.push(all_cookies[i]);
+                }
+            }
 
-                        cookie_table = []
-                        for(var a=0; a<all_cookies.length;a++){
-                            if(cookie_tryb==3){
-                                if(document.cookie.split("; ")[a].split("=")[0].slice(6,7)==3){
-                                  cookie_table.push(document.cookie.split(";")[a])
-                                }
-                            }
+            cookie_table.sort();
+            console.log("Selected mode cookie records:", cookie_table);
 
-                            else  if(cookie_tryb==4){
-                                if(document.cookie.split("; ")[a].split("=")[0].slice(6,7)==4){
-                                    cookie_table.push(document.cookie.split(";")[a])
-                                }
-                            }
-
-                            if(cookie_tryb==5){
-                                if(document.cookie.split("; ")[a].split("=")[0].slice(6,7)==5){
-                                    cookie_table.push(document.cookie.split(";")[a])
-                                }
-                            }
-
-                            if(cookie_tryb==6){
-                                if(document.cookie.split("; ")[a].split("=")[0].slice(6,7)==6){
-                                    cookie_table.push(document.cookie.split(";")[a])
-                                }
-                            }
-
-                        }
-
-                        cookie_table=cookie_table.sort()
-                        console.log("REKODY COOKIE WYBRANEGO TRYBU: ")
-                        console.log(cookie_table)
-                        document.getElementById("ranking_label").style.visibility="visible"
+            document.getElementById("ranking_label").style.visibility = "visible";
         }
+
 
         var winner_div = document.createElement("DIV")
         var cookie_table = []
-        function move_tiles(tile_to_move){
+        function move_tiles(tile_to_move) {
             // Zamiana miejcami elementu klikniętego z elementem pustym w tablicy 
-            auxiliary_variables.game_board_array[auxiliary_variables.tile_pos_y][auxiliary_variables.tile_pos_x]=auxiliary_variables.game_board_array[auxiliary_variables.empty_tile_pos_y][auxiliary_variables.empty_tile_pos_x]
-            auxiliary_variables.game_board_array[auxiliary_variables.empty_tile_pos_y][auxiliary_variables.empty_tile_pos_x]=tile_to_move
+            auxiliary_variables.game_board_array[auxiliary_variables.tile_pos_y][auxiliary_variables.tile_pos_x] = auxiliary_variables.game_board_array[auxiliary_variables.empty_tile_pos_y][auxiliary_variables.empty_tile_pos_x]
+            auxiliary_variables.game_board_array[auxiliary_variables.empty_tile_pos_y][auxiliary_variables.empty_tile_pos_x] = tile_to_move
             console.log("----- NASTĄPIŁA ZMIANA MIEJSC! NOWA TABLICA: -----")
             console.log(auxiliary_variables.game_board_array)
-            auxiliary_variables.can_move=false
+            auxiliary_variables.can_move = false
 
-                // Zmiana wyglądu gry
-                for(var a=0; a<auxiliary_variables.game_board_array.length;a++){
-                    for(var b=0; b<auxiliary_variables.game_board_array[a].length;b++){
-                        document.getElementById("square").appendChild(auxiliary_variables.game_board_array[a][b])
+            // Zmiana wyglądu gry
+            for (var a = 0; a < auxiliary_variables.game_board_array.length; a++) {
+                for (var b = 0; b < auxiliary_variables.game_board_array[a].length; b++) {
+                    document.getElementById("square").appendChild(auxiliary_variables.game_board_array[a][b])
+                }
+            }
+
+            if (auxiliary_variables.can_start_check == true) {
+                var t = 0;
+                var done = []
+                for (var a = 0; a < auxiliary_variables.game_board_array.length; a++) {
+                    for (var b = 0; b < auxiliary_variables.game_board_array[a].length; b++) {
+                        if (a == auxiliary_variables.game_board_array.length - 1 && b == auxiliary_variables.game_board_array[a].length - 1) {
+                            done.push(auxiliary_variables.game_board_array[a][b].id == "empty")
+                        } else {
+                            done.push(auxiliary_variables.game_board_array[a][b].id == t)
                         }
-                } 
-
-                if(auxiliary_variables.can_start_check==true){
-                    var t = 0;
-                    var done = []
-                    for(var a=0; a<auxiliary_variables.game_board_array.length;a++){
-                        for(var b=0; b<auxiliary_variables.game_board_array[a].length;b++){
-                            if(a==auxiliary_variables.game_board_array.length-1 && b==auxiliary_variables.game_board_array[a].length-1){
-                                done.push(auxiliary_variables.game_board_array[a][b].id=="empty")
-                            }else{
-                                done.push(auxiliary_variables.game_board_array[a][b].id==t)
-                            }
-                            t++
-                        }  
-                    } 
-                    if(done.every(check)==true){
-                        can_add_cookie = true
-                        stop_timer = "show_time"
-                        winner_div.id="winner_div"
-                        winner_div.style.width="600px"
-                        winner_div.textContent="Gratulację! Udało ci się ułożyć układankę! Uzyskany czas:"+display_clock
-                        winner_div.style.zIndex="1"
-                        winner_div.style.margin="20px"
-                        winner_div.style.opacity="1"
-                        winner_div.style.fontWeight="bold"
-                        winner_div.style.color="#9C0F0C"
-                        winner_div.style.fontSize="2em"
-                        winner_div.height="50px"
-                        winner_div.width="50px"
-                        winner_div.style.display="flex"
-                        winner_div.style.justifyContent="center"
-                        winner_div.style.alignItems="center"
-                        auxiliary_variables.user_done_playing=true
-                        winner_div.style.textAlign="center"
-
-                        document.getElementById("container").appendChild(winner_div)
-                        document.getElementById("square").style.opacity="0.5"
-                        auxiliary_variables.can_start_check=false
-                        
-
-                        // Aktualizacja rankingu
-                        get_cookies()
-                        update_table()
+                        t++
                     }
                 }
+                if (done.every(check) == true) {
+                    can_add_cookie = true
+                    stop_timer = "show_time"
+                    winner_div.id = "winner_div"
+                    winner_div.style.width = "600px"
+                    winner_div.textContent = "Gratulację! Udało ci się ułożyć układankę! Uzyskany czas:" + display_clock
+                    winner_div.style.zIndex = "1"
+                    winner_div.style.margin = "20px"
+                    winner_div.style.opacity = "1"
+                    winner_div.style.fontWeight = "bold"
+                    winner_div.style.color = "#9C0F0C"
+                    winner_div.style.fontSize = "2em"
+                    winner_div.height = "50px"
+                    winner_div.width = "50px"
+                    winner_div.style.display = "flex"
+                    winner_div.style.justifyContent = "center"
+                    winner_div.style.alignItems = "center"
+                    auxiliary_variables.user_done_playing = true
+                    winner_div.style.textAlign = "center"
+
+                    document.getElementById("container").appendChild(winner_div)
+                    document.getElementById("square").style.opacity = "0.5"
+                    auxiliary_variables.can_start_check = false
+
+
+                    // Aktualizacja rankingu
+                    get_cookies()
+                    update_table()
+                }
+            }
 
         }
-     
-        function get_tiles(table){
+
+        function get_tiles(table) {
             var game_tiles = document.querySelectorAll(".tile")
 
             auxiliary_variables.game_board_array = ""
@@ -712,68 +696,68 @@
             }
             console.log(auxiliary_variables.game_board_array)
 
-            for(var a=0; a<game_tiles.length;a++){
-                game_tiles[a].addEventListener("click", function(event){
+            for (var a = 0; a < game_tiles.length; a++) {
+                game_tiles[a].addEventListener("click", function (event) {
 
-                if(event.target.id!="empty"){
-                    search_tiles(event.target)
+                    if (event.target.id != "empty") {
+                        search_tiles(event.target)
 
-                    // Warunki pozwalające na zmianę miejsca kafelka
-                    if((auxiliary_variables.empty_tile_pos_x==auxiliary_variables.tile_pos_x+1 && auxiliary_variables.empty_tile_pos_y==auxiliary_variables.tile_pos_y) || (auxiliary_variables.empty_tile_pos_x==auxiliary_variables.tile_pos_x-1 && auxiliary_variables.empty_tile_pos_y==auxiliary_variables.tile_pos_y) || (auxiliary_variables.empty_tile_pos_x==auxiliary_variables.tile_pos_x && auxiliary_variables.empty_tile_pos_y==auxiliary_variables.tile_pos_y+1) || (auxiliary_variables.empty_tile_pos_x==auxiliary_variables.tile_pos_x && auxiliary_variables.empty_tile_pos_y==auxiliary_variables.tile_pos_y-1)){
-                        auxiliary_variables.can_move = true
-                    }
+                        // Warunki pozwalające na zmianę miejsca kafelka
+                        if ((auxiliary_variables.empty_tile_pos_x == auxiliary_variables.tile_pos_x + 1 && auxiliary_variables.empty_tile_pos_y == auxiliary_variables.tile_pos_y) || (auxiliary_variables.empty_tile_pos_x == auxiliary_variables.tile_pos_x - 1 && auxiliary_variables.empty_tile_pos_y == auxiliary_variables.tile_pos_y) || (auxiliary_variables.empty_tile_pos_x == auxiliary_variables.tile_pos_x && auxiliary_variables.empty_tile_pos_y == auxiliary_variables.tile_pos_y + 1) || (auxiliary_variables.empty_tile_pos_x == auxiliary_variables.tile_pos_x && auxiliary_variables.empty_tile_pos_y == auxiliary_variables.tile_pos_y - 1)) {
+                            auxiliary_variables.can_move = true
+                        }
 
-                    if(auxiliary_variables.can_move==true){
-                        var target_tile = auxiliary_variables.game_board_array[auxiliary_variables.tile_pos_y][auxiliary_variables.tile_pos_x]
-                        move_tiles(target_tile)
-                    }
-                    
+                        if (auxiliary_variables.can_move == true) {
+                            var target_tile = auxiliary_variables.game_board_array[auxiliary_variables.tile_pos_y][auxiliary_variables.tile_pos_x]
+                            move_tiles(target_tile)
+                        }
+
                     }
                 })
             }
         }
 
 
-        function split_image(dimensions, table){
+        function split_image(dimensions, table) {
             document.getElementById("square").innerHTML = "";
-            auxiliary_variables.pos_y=0
-            var j=0;
-            for(var a=0; a<table; a++){
-                auxiliary_variables.pos_x=0
-                for(var b=0; b<table; b++){
+            auxiliary_variables.pos_y = 0
+            var j = 0;
+            for (var a = 0; a < table; a++) {
+                auxiliary_variables.pos_x = 0
+                for (var b = 0; b < table; b++) {
                     var div = document.createElement("DIV")
-                    div.style.height=dimensions+"px"
-                    div.style.width=dimensions+"px"
-                    div.style.backgroundSize="600px 600px"
-                    div.style.top= auxiliary_variables.pos_y+"px"
-                    div.style.left= auxiliary_variables.pos_x+"px"
-                    div.style.display="inline-block"
-                    div.style.backgroundPositionX="-"+ auxiliary_variables.pos_x+"px"
-                    div.style.backgroundPositionY="-"+ auxiliary_variables.pos_y+"px"
-                    div.className="tile"
-                    div.id=j
+                    div.style.height = dimensions + "px"
+                    div.style.width = dimensions + "px"
+                    div.style.backgroundSize = "600px 600px"
+                    div.style.top = auxiliary_variables.pos_y + "px"
+                    div.style.left = auxiliary_variables.pos_x + "px"
+                    div.style.display = "inline-block"
+                    div.style.backgroundPositionX = "-" + auxiliary_variables.pos_x + "px"
+                    div.style.backgroundPositionY = "-" + auxiliary_variables.pos_y + "px"
+                    div.className = "tile"
+                    div.id = j
                     j++
-                    if(a==table-1 && b==table-1){
-                        div.id="empty"
-                        div.style.backgroundColor="black"
-                    }else{
-                        div.style.backgroundImage=background_scr
+                    if (a == table - 1 && b == table - 1) {
+                        div.id = "empty"
+                        div.style.backgroundColor = "black"
+                    } else {
+                        div.style.backgroundImage = background_scr
                     }
                     document.getElementById("square").appendChild(div)
-                    auxiliary_variables.pos_x= auxiliary_variables.pos_x+dimensions
+                    auxiliary_variables.pos_x = auxiliary_variables.pos_x + dimensions
                 }
-                auxiliary_variables.pos_y= auxiliary_variables.pos_y+dimensions
+                auxiliary_variables.pos_y = auxiliary_variables.pos_y + dimensions
             }
             get_tiles(table)
         }
 
 
         // COOKIE
-        function set_cookie(tryb, postion, nick, czas){
+        function set_cookie(tryb, postion, nick, czas) {
             var now = new Date();
-            now.setMonth( now.getMonth() + 1 );
+            now.setMonth(now.getMonth() + 1);
 
-            document.cookie = "cookie"+tryb+postion+"=nick|"+nick+"|czas|"+czas+"|position|"+postion+"; expires="+now.toUTCString()+";"
+            document.cookie = "cookie" + tryb + postion + "=nick|" + nick + "|czas|" + czas + "|position|" + postion + "; expires=" + now.toUTCString() + ";"
         }
 
         var cookie_tryb = ""
@@ -782,11 +766,11 @@
 
 
         // RANKING - TABELA
-        function update_table(){
-            cookie_table.sort(function(a, b) {
+        function update_table() {
+            cookie_table.sort(function (a, b) {
                 a = a.split("=")[1].split("|")[5]
                 b = b.split("=")[1].split("|")[5]
-                console.log(a,b)
+                console.log(a, b)
 
                 return a - b;
             })
@@ -798,55 +782,55 @@
             var times = []
             var positions = []
 
-            for(var a=0; a< cookie_table.length;a++){
-               nicks.push(cookie_table[a].split("=")[1].split("|")[1])
-               times.push(cookie_table[a].split("=")[1].split("|")[3])
-               positions.push(cookie_table[a].split("=")[1].split("|")[5])
+            for (var a = 0; a < cookie_table.length; a++) {
+                nicks.push(cookie_table[a].split("=")[1].split("|")[1])
+                times.push(cookie_table[a].split("=")[1].split("|")[3])
+                positions.push(cookie_table[a].split("=")[1].split("|")[5])
             }
 
             console.log(positions, times, nicks)
 
-            var c=0
+            var c = 0
             document.getElementById("ranking_table_div").innerHTML = ""
 
             var table = document.createElement("TABLE")
-            table.id="ranking_table"
+            table.id = "ranking_table"
 
-            for(var a=0; a< 11; a++){
+            for (var a = 0; a < 11; a++) {
                 var row = document.createElement("TR")
-                if(a==0){
-                    row.id="table_label"
-                }else{
-                    row.classList="rows"
-                    row.id=a-1
+                if (a == 0) {
+                    row.id = "table_label"
+                } else {
+                    row.classList = "rows"
+                    row.id = a - 1
                 }
 
-                    for(var b=0; b<3; b++){
-                        var cell = document.createElement("TD")
+                for (var b = 0; b < 3; b++) {
+                    var cell = document.createElement("TD")
 
-                        if(a==0 && b==0){
-                            cell.innerText="Pozycja"
-                        }else if(a==0 && b==1){
-                            cell.innerText="Nick"
-                        }else if(a==0 & b==2){
-                            cell.innerText="Czas"
-                        }
-                        else if(a>0 && b==0){
-                            cell.innerText=positions[c]
-                        }else if(a>0 && b==1){
-                            cell.innerText=nicks[c]
-                        }else if(a>0 && b==2){
-                            cell.innerText=times[c]
-                        }
-                        
-                        row.appendChild(cell)
+                    if (a == 0 && b == 0) {
+                        cell.innerText = "Pozycja"
+                    } else if (a == 0 && b == 1) {
+                        cell.innerText = "Nick"
+                    } else if (a == 0 & b == 2) {
+                        cell.innerText = "Czas"
+                    }
+                    else if (a > 0 && b == 0) {
+                        cell.innerText = positions[c]
+                    } else if (a > 0 && b == 1) {
+                        cell.innerText = nicks[c]
+                    } else if (a > 0 && b == 2) {
+                        cell.innerText = times[c]
                     }
 
-                    if(a>0){
-                        c++
-                    }
+                    row.appendChild(cell)
+                }
 
-                    
+                if (a > 0) {
+                    c++
+                }
+
+
 
                 table.appendChild(row)
             }
@@ -856,7 +840,7 @@
 
         var can_add_cookie = false
         // BUTTONS
-        document.getElementById("three").addEventListener("click", function(){
+        document.getElementById("three").addEventListener("click", function () {
             can_add_cookie = ""
             can_add_cookie = false
             cookie_tryb = ""
@@ -867,32 +851,32 @@
             document.getElementById("ranking_label").innerText = ""
             document.getElementById("ranking_label").innerText = "Ranking graczy trubu 3x3"
 
-            winner_div.innerHTML=""
-            document.getElementById("square").style.opacity="1"
-            if(background_scr==""){
+            winner_div.innerHTML = ""
+            document.getElementById("square").style.opacity = "1"
+            if (background_scr == "") {
                 auxiliary_variables.can_make_tiles = false
-            }else{
-                auxiliary_variables.can_make_tiles = true 
+            } else {
+                auxiliary_variables.can_make_tiles = true
             }
-            if(auxiliary_variables.can_make_tiles == true){
+            if (auxiliary_variables.can_make_tiles == true) {
                 stop_timer = true
-                auxiliary_variables.can_start_check=false
+                auxiliary_variables.can_start_check = false
                 user_done_playing = false
                 var piece_dimensions = 200
                 var table_dimensions = 3
                 split_image(piece_dimensions, table_dimensions)
                 var random_move_tiles_function = setInterval(random_move_tiles, 10)
                 // Rozpoczęcie odliczania
-                var timer_start = setTimeout(function(){ clearInterval(random_move_tiles_function); auxiliary_variables.can_start_check=true}, 3000);
+                var timer_start = setTimeout(function () { clearInterval(random_move_tiles_function); auxiliary_variables.can_start_check = true }, 3000);
                 // Zakończenie odliczania - odświeżenie gry / zmiana trybu
-                var timer_stop = setTimeout(function(){stop_timer = false; start_time= new Date;}, 3000);
+                var timer_stop = setTimeout(function () { stop_timer = false; start_time = new Date; }, 3000);
                 // Wzięcie czasu i zatrzymanie zegara
-                var timer_stop = setTimeout(function(){stop_timer = false; start_time= new Date;}, 3000);
+                var timer_stop = setTimeout(function () { stop_timer = false; start_time = new Date; }, 3000);
                 setInterval(timer, 1)
             }
         })
 
-        document.getElementById("four").addEventListener("click", function(){
+        document.getElementById("four").addEventListener("click", function () {
             can_add_cookie = ""
             can_add_cookie = false
             cookie_tryb = ""
@@ -904,29 +888,29 @@
             document.getElementById("ranking_label").innerText = ""
             document.getElementById("ranking_label").innerText = "Ranking graczy trubu 4x4"
 
-            winner_div.innerHTML=""
-            document.getElementById("square").style.opacity="1"
-            if(background_scr==""){
+            winner_div.innerHTML = ""
+            document.getElementById("square").style.opacity = "1"
+            if (background_scr == "") {
                 auxiliary_variables.can_make_tiles = false
-            }else{
-                auxiliary_variables.can_make_tiles = true 
+            } else {
+                auxiliary_variables.can_make_tiles = true
             }
-            if(auxiliary_variables.can_make_tiles == true){
+            if (auxiliary_variables.can_make_tiles == true) {
                 stop_timer = true
-                auxiliary_variables.can_start_check=false
+                auxiliary_variables.can_start_check = false
                 var piece_dimensions = 150
                 var table_dimensions = 4
                 split_image(piece_dimensions, table_dimensions)
                 var random_move_tiles_function = setInterval(random_move_tiles, 10)
                 // Rozpoczęcie odliczania
-                var timer_start = setTimeout(function(){ clearInterval(random_move_tiles_function); auxiliary_variables.can_start_check=true; start_time= new Date}, 3000);
+                var timer_start = setTimeout(function () { clearInterval(random_move_tiles_function); auxiliary_variables.can_start_check = true; start_time = new Date }, 3000);
                 // Zakończenie odliczania - odświeżenie gry / zmiana trybu
-                var timer_stop = setTimeout(function(){stop_timer = false; setInterval(timer, 10);}, 3000);
+                var timer_stop = setTimeout(function () { stop_timer = false; setInterval(timer, 10); }, 3000);
             }
         })
-        
 
-        document.getElementById("five").addEventListener("click", function(){
+
+        document.getElementById("five").addEventListener("click", function () {
             can_add_cookie = ""
             can_add_cookie = false
             cookie_tryb = ""
@@ -938,28 +922,28 @@
             document.getElementById("ranking_label").innerText = ""
             document.getElementById("ranking_label").innerText = "Ranking graczy trubu 5x5"
 
-            winner_div.innerHTML=""
-            document.getElementById("square").style.opacity="1"
-            if(background_scr==""){
+            winner_div.innerHTML = ""
+            document.getElementById("square").style.opacity = "1"
+            if (background_scr == "") {
                 auxiliary_variables.can_make_tiles = false
-            }else{
-                auxiliary_variables.can_make_tiles = true 
+            } else {
+                auxiliary_variables.can_make_tiles = true
             }
-            if(auxiliary_variables.can_make_tiles == true){
+            if (auxiliary_variables.can_make_tiles == true) {
                 stop_timer = true
-                auxiliary_variables.can_start_check=false
+                auxiliary_variables.can_start_check = false
                 var piece_dimensions = 120
                 var table_dimensions = 5
                 split_image(piece_dimensions, table_dimensions)
                 var random_move_tiles_function = setInterval(random_move_tiles, 10)
                 // Rozpoczęcie odliczania
-                var timer_start = setTimeout(function(){ clearInterval(random_move_tiles_function); auxiliary_variables.can_start_check=true; start_time= new Date}, 3000);
+                var timer_start = setTimeout(function () { clearInterval(random_move_tiles_function); auxiliary_variables.can_start_check = true; start_time = new Date }, 3000);
                 // Zakończenie odliczania - odświeżenie gry / zmiana trybu
-                var timer_stop = setTimeout(function(){stop_timer = false; setInterval(timer, 10); }, 3000);
+                var timer_stop = setTimeout(function () { stop_timer = false; setInterval(timer, 10); }, 3000);
             }
         })
 
-        document.getElementById("six").addEventListener("click", function(){
+        document.getElementById("six").addEventListener("click", function () {
             can_add_cookie = ""
             can_add_cookie = false
             cookie_tryb = ""
@@ -971,28 +955,29 @@
             document.getElementById("ranking_label").innerText = ""
             document.getElementById("ranking_label").innerText = "Ranking graczy trubu 6x6"
 
-            winner_div.innerHTML=""
-            document.getElementById("square").style.opacity="1"
-            if(background_scr==""){
+            winner_div.innerHTML = ""
+            document.getElementById("square").style.opacity = "1"
+            if (background_scr == "") {
                 auxiliary_variables.can_make_tiles = false
-            }else{
-                auxiliary_variables.can_make_tiles = true 
+            } else {
+                auxiliary_variables.can_make_tiles = true
             }
-            if(auxiliary_variables.can_make_tiles == true){
+            if (auxiliary_variables.can_make_tiles == true) {
                 stop_timer = true
-                auxiliary_variables.can_start_check=false
+                auxiliary_variables.can_start_check = false
                 var piece_dimensions = 100
                 var table_dimensions = 6
                 split_image(piece_dimensions, table_dimensions)
                 var random_move_tiles_function = setInterval(random_move_tiles, 10)
                 // Rozpoczęcie odliczania
-                var timer_start = setTimeout(function(){ clearInterval(random_move_tiles_function); auxiliary_variables.can_start_check=true; start_time= new Date}, 3000);
+                var timer_start = setTimeout(function () { clearInterval(random_move_tiles_function); auxiliary_variables.can_start_check = true; start_time = new Date }, 3000);
                 // Zakończenie odliczania - odświeżenie gry / zmiana trybu
-                var timer_stop = setTimeout(function(){stop_timer = false; setInterval(timer, 10);}, 3000);
+                var timer_stop = setTimeout(function () { stop_timer = false; setInterval(timer, 10); }, 3000);
             }
         })
 
     </script>
-    
+
 </body>
+
 </html>
